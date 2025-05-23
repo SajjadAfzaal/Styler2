@@ -1,0 +1,74 @@
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
+import React from 'react';
+
+export default function ActionCard() {
+  function openWebsite(link: String) {
+    Linking.openURL('link');
+  }
+
+  return (
+    <View>
+      <Text style={styles.headingText}>Blog Card</Text>
+      <View style={styles.headingContainer}>
+        <Text style={styles.heading}>What's new in Modern JavaScript ES21</Text>
+        <Image
+          source={{
+            uri: 'https://www.inkoop.io/static/84a6024aed371ff1212483ac3af176cf/e64c7/banner.webp',
+          }}
+          style={styles.cardImage}
+        />
+      </View>
+      <View style={styles.cardBody}>
+        <Text numberOfLines={2}>
+          ECMAScript keeps evolving with the introduction of cool new features
+          every year. The 12th edition of ES has simplified essential coding
+          functionalities with its enhanced features.
+        </Text>
+        <View style={styles.footerContainer}>
+          <TouchableOpacity
+            onPress={() =>
+              openWebsite(
+                'https://royalisms.medium.com/javascript-es2021-new-es21-features-you-need-to-see-8ed2884254a3',
+              )
+            }>
+            <Text style={styles.socialLinks}>Read More</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  headingText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginHorizontal: 8,
+    marginBottom: 6,
+  },
+  headingContainer: {
+    flex: 1,
+  },
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginHorizontal: 8,
+    marginBottom: 6,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cardImage: {
+    height: 200,
+  },
+  cardBody: {},
+  footerContainer: {},
+  socialLinks: {},
+});
