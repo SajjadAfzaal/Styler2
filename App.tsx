@@ -4,7 +4,9 @@ import FlatCards from './Components/FlatCards';
 import ElevatedCards from './Components/ElevatedCards';
 import FancyCard from './Components/FancyCard';
 import ActionCard from './Components/ActionCard';
+import ContactList from './Components/ContactList';
 
+// adb connect 192.168.18.87:5555
 const App = () => {
   return (
     <SafeAreaView>
@@ -12,6 +14,7 @@ const App = () => {
         <FlatCards />
         <ElevatedCards />
         <FancyCard />
+        <ContactList />
         <ActionCard />
       </ScrollView>
     </SafeAreaView>
